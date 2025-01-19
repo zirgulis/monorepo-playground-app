@@ -8,11 +8,14 @@
     "start": "react-native start",
     "build": "tsc",
     "clean": "rm -rf dist",
-    "lint": "eslint src --ext .ts,.tsx"
+    "lint": "eslint src --ext .ts,.tsx",
+    "pod-install": "cd ios && pod install",
+    "reset-cache": "react-native start --reset-cache"
   },
   "dependencies": {
     "@monorepo-playground-app/components": "*",
     "@monorepo-playground-app/utils": "*",
+    "@react-native-community/cli-platform-ios": "^15.1.3",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "react": "18.2.0",
@@ -32,4 +35,4 @@
     "metro-react-native-babel-preset": "^0.77.0",
     "typescript": "^5.3.3"
   }
-} 
+}

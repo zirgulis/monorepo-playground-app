@@ -36,9 +36,8 @@ yarn-error.log*
 *.swo
 
 # iOS
-ios/Pods/
-ios/build/
-ios/Podfile.lock
+apps/mobile/ios/Pods/
+apps/mobile/ios/build/
 
 # Android
 android/app/build/
