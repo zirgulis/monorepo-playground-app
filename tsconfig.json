@@ -13,9 +13,11 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@monorepo-playground-app/*": ["packages/*/src"]
+      "@monorepo-playground-app/components": ["packages/components/src"],
+      "@monorepo-playground-app/components/*": ["packages/components/src/*"],
+      "@monorepo-playground-app/utils": ["packages/utils/src"],
+      "@monorepo-playground-app/utils/*": ["packages/utils/src/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 } 
