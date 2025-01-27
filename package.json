@@ -6,11 +6,11 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev",
-    "ios": "turbo run ios",
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "lint": "turbo run lint",
+    "dev": "yarn workspaces foreach -pi run dev",
+    "ios": "yarn workspace mobile ios",
+    "build": "yarn workspaces foreach -pi run build",
+    "clean": "yarn workspaces foreach -pi run clean",
+    "lint": "yarn workspaces foreach -pi run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
@@ -22,7 +22,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.2.4",
-    "turbo": "^1.11.3",
     "typescript": "^5.3.3"
   },
   "packageManager": "yarn@4.0.2"
