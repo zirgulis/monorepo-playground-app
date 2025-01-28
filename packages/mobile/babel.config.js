@@ -1,17 +1,3 @@
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  plugins: [
-    [
-      'module-resolver',
-      {
-        root: ['./src'],
-        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
-        alias: {
-          '@': './src',
-          '@monorepo-playground-app/components': '../../packages/components/src',
-          '@monorepo-playground-app/utils': '../../packages/utils/src',
-        },
-      },
-    ],
-  ],
+  presets: ['module:@react-native/babel-preset'],
 };

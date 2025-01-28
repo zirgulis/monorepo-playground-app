@@ -14,22 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FBReactNativeSpec.xcscheme</key>
+		<key>Pods-app.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-TodoApp-TodoAppTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-TodoApp.xcscheme</key>
+		<key>RCT-Folly-RCT-Folly_privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>RCT-Folly.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RCTDeprecation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -44,12 +44,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>React-Codegen.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>React-Core-RCTI18nStrings.xcscheme</key>
+		<key>React-Core-React-Core_privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -65,6 +60,11 @@
 			<false/>
 		</dict>
 		<key>React-Fabric.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-FabricComponents.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -109,6 +109,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>React-RCTFBReactNativeSpec.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>React-RCTFabric.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -144,7 +149,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>React-RuntimeApple.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-RuntimeCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-RuntimeHermes.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>React-callinvoker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-cxxreact-React-cxxreact_privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -159,12 +184,37 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>React-defaultsnativemodule.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-domnativemodule.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-featureflags.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-featureflagsnativemodule.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>React-graphics.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>React-hermes.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-idlecallbacksnativemodule.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -189,7 +239,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>React-jsitracing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>React-logger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-microtasksnativemodule.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -200,6 +260,16 @@
 			<false/>
 		</dict>
 		<key>React-perflogger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-performancetimeline.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>React-rendererconsistency.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -224,12 +294,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>React-timing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>React-utils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>React.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactAppDependencyProvider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactCodegen.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -249,12 +334,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>boost-boost_privacy.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>boost.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>fast_float.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>fmt.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>glog-glog_privacy.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -265,11 +365,6 @@
 			<false/>
 		</dict>
 		<key>hermes-engine.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>libevent.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

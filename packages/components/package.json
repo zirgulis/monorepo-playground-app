@@ -1,24 +1,14 @@
 {
-  "name": "@monorepo-playground-app/components",
-  "version": "0.0.1",
+  "name": "@monorepo/components",
+  "version": "1.0.0",
   "private": true,
   "main": "src/index.ts",
-  "types": "src/index.ts",
   "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist",
-    "lint": "eslint src --ext .ts,.tsx"
-  },
-  "dependencies": {
-    "@monorepo-playground-app/utils": "*"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-native": "0.73.2"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.48",
-    "@types/react-native": "^0.73.0",
-    "typescript": "^5.3.3"
+    "react": "18.3.1",
+    "react-native": "0.77.0"
   }
 }
