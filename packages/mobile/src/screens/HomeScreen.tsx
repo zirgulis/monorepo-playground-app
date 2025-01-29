@@ -1,11 +1,11 @@
 import React from 'react';
-import {useCallback, useEffect, useState} from 'react';
+import {useCallback, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import {getTodos, toggleTodo, deleteTodo, Todo} from '@monorepo/utils';
-import {RootStackNavigationProp} from '../navigation/types';
-import {TodoList} from '../components/TodoList';
-import {FAB} from '../components/FAB';
+import {RootStackNavigationProp} from '@monorepo/mobile/src/navigation/types';
+import {TodoList} from '@monorepo/components/src/TodoList/TodoList';
+import {FAB} from '@monorepo/components/src/FAB/FAB';
 
 export const HomeScreen = () => {
   const navigation = useNavigation<RootStackNavigationProp>();
@@ -16,9 +16,11 @@ export const HomeScreen = () => {
     setTodos(loadedTodos);
   }, []);
 
-  useEffect(() => {
-    loadTodos();
-  }, [loadTodos]);
+  useFocusEffect(
+    useCallback(() => {
+      loadTodos();
+    }, [loadTodos]),
+  );
 
   const handleToggleTodo = async (id: string) => {
     await toggleTodo(id);
