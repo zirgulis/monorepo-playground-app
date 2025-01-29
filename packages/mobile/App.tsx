@@ -1,30 +1,24 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {RootStackParamList} from './src/navigation/types';
-import {HomeScreen} from '@monorepo/mobile/src/screens/HomeScreen';
-import {AddTodoScreen} from '@monorepo/mobile/src/screens/AddTodoScreen';
+import {Text, View, StyleSheet} from 'react-native';
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
-
-export const App = () => {
+const App = () => {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{title: 'Todo List'}}
-          />
-          <Stack.Screen
-            name="AddTodo"
-            component={AddTodoScreen}
-            options={{title: 'Add Todo'}}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello World</Text>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+});
+
+export default App;

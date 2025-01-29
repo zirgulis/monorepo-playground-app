@@ -2,10 +2,10 @@ import React from 'react';
 import {useCallback, useEffect, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {TodoList} from '@monorepo/components';
 import {getTodos, toggleTodo, deleteTodo, Todo} from '@monorepo/utils';
 import {RootStackNavigationProp} from '../navigation/types';
-import {FAB} from '@monorepo/components/src/FAB/FAB';
+import {TodoList} from '../components/TodoList';
+import {FAB} from '../components/FAB';
 
 export const HomeScreen = () => {
   const navigation = useNavigation<RootStackNavigationProp>();
