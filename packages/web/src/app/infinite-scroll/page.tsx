@@ -32,11 +32,20 @@ function* createWorkflowGenerator() {
   yield "COMPLETED";
 }
 
+async function* createAsyncGenerator() {
+  let page = 0;
+  while (true) {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    yield `Async data from page ${page++}`;
+  }
+}
+
 type Item = {
   id: number;
   title: string;
   fibNumber?: number;
   state?: string;
+  asyncData?: string;
 };
 
 export default function InfiniteScrollPage() {
@@ -57,13 +66,17 @@ export default function InfiniteScrollPage() {
     const nextState = workflowGen.next().value || currentState;
     setCurrentState(nextState);
 
-    const itemsWithFibAndState = newItems.map((item) => ({
+    const asyncGen = createAsyncGenerator();
+    const asyncResult = await asyncGen.next();
+
+    const itemsWithAll = newItems.map((item) => ({
       ...item,
       fibNumber: fibGen.next().value,
       state: nextState,
+      asyncData: asyncResult.value,
     }));
 
-    setItems((prev) => [...prev, ...itemsWithFibAndState]);
+    setItems((prev) => [...prev, ...itemsWithAll]);
 
     setLoading(false);
   };
@@ -106,6 +119,7 @@ export default function InfiniteScrollPage() {
             <div className="mt-2 space-y-1 text-sm text-gray-600">
               <p>Fibonacci Number: {item.fibNumber}</p>
               <p>State: {item.state}</p>
+              <p>Async Data: {item.asyncData}</p>
             </div>
           </div>
         ))}
