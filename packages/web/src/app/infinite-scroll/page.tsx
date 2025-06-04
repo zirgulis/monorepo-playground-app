@@ -25,17 +25,27 @@ function* createFibonacciGenerator() {
   }
 }
 
+function* createWorkflowGenerator() {
+  yield "PENDING";
+  yield "LOADING";
+  yield "PROCESSING";
+  yield "COMPLETED";
+}
+
 type Item = {
   id: number;
   title: string;
   fibNumber?: number;
+  state?: string;
 };
 
 export default function InfiniteScrollPage() {
   const [items, setItems] = useState<Item[]>([]);
   const [paginatedGen] = useState(() => createPaginatedDataGenerator());
   const [fibGen] = useState(() => createFibonacciGenerator());
+  const [workflowGen] = useState(() => createWorkflowGenerator());
   const [loading, setLoading] = useState(false);
+  const [currentState, setCurrentState] = useState<string>("PENDING");
 
   const loadMoreItems = async () => {
     setLoading(true);
@@ -44,13 +54,16 @@ export default function InfiniteScrollPage() {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     const { items: newItems } = paginatedGen.next().value!;
+    const nextState = workflowGen.next().value || currentState;
+    setCurrentState(nextState);
 
-    const itemsWithFib = newItems.map((item) => ({
+    const itemsWithFibAndState = newItems.map((item) => ({
       ...item,
       fibNumber: fibGen.next().value,
+      state: nextState,
     }));
 
-    setItems((prev) => [...prev, ...itemsWithFib]);
+    setItems((prev) => [...prev, ...itemsWithFibAndState]);
 
     setLoading(false);
   };
@@ -74,9 +87,14 @@ export default function InfiniteScrollPage() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">
-        Infinite Scroll with Generators
-      </h1>
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold mb-4">
+          Infinite Scroll with Generators
+        </h1>
+        <div className="bg-blue-100 p-4 rounded-lg">
+          <p className="font-semibold">Current State: {currentState}</p>
+        </div>
+      </div>
 
       <div className="space-y-4">
         {items.map((item) => (
@@ -85,9 +103,10 @@ export default function InfiniteScrollPage() {
             className="p-4 border rounded-lg shadow-sm hover:shadow-md transition-all"
           >
             <h2 className="text-xl font-semibold">{item.title}</h2>
-            <p className="text-sm text-gray-600 mt-2">
-              Fibonacci Number: {item.fibNumber}
-            </p>
+            <div className="mt-2 space-y-1 text-sm text-gray-600">
+              <p>Fibonacci Number: {item.fibNumber}</p>
+              <p>State: {item.state}</p>
+            </div>
           </div>
         ))}
         {loading && (
