@@ -16,14 +16,25 @@ function* createPaginatedDataGenerator() {
   }
 }
 
+function* createFibonacciGenerator() {
+  let prev = 0,
+    curr = 1;
+  while (true) {
+    yield curr;
+    [prev, curr] = [curr, prev + curr];
+  }
+}
+
 type Item = {
   id: number;
   title: string;
+  fibNumber?: number;
 };
 
 export default function InfiniteScrollPage() {
   const [items, setItems] = useState<Item[]>([]);
   const [paginatedGen] = useState(() => createPaginatedDataGenerator());
+  const [fibGen] = useState(() => createFibonacciGenerator());
   const [loading, setLoading] = useState(false);
 
   const loadMoreItems = async () => {
@@ -33,7 +44,13 @@ export default function InfiniteScrollPage() {
     await new Promise((resolve) => setTimeout(resolve, 500));
 
     const { items: newItems } = paginatedGen.next().value!;
-    setItems((prev) => [...prev, ...newItems]);
+
+    const itemsWithFib = newItems.map((item) => ({
+      ...item,
+      fibNumber: fibGen.next().value,
+    }));
+
+    setItems((prev) => [...prev, ...itemsWithFib]);
 
     setLoading(false);
   };
@@ -68,6 +85,9 @@ export default function InfiniteScrollPage() {
             className="p-4 border rounded-lg shadow-sm hover:shadow-md transition-all"
           >
             <h2 className="text-xl font-semibold">{item.title}</h2>
+            <p className="text-sm text-gray-600 mt-2">
+              Fibonacci Number: {item.fibNumber}
+            </p>
           </div>
         ))}
         {loading && (
